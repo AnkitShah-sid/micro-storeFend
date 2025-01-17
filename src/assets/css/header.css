@@ -1,0 +1,38 @@
+header {
+  position: fixed; /* Ensures it stays at the top */
+  top: 0;
+  left: 0;
+  width: 100%; /* Full width */
+  height: 60px; /* Adjustable height */
+  background-color: rgba(8, 8, 8, 0.8); /* Semi-transparent background */
+  border-bottom: 1px solid rgba(9, 9, 9, 0.2); /* Optional border */
+  z-index: 1000; /* Ensures it sits above other elements */
+  display: flex;
+  align-items: center;
+  justify-content: space-between; /* Space between content inside */
+  padding: 0 20px; /* Side padding */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Optional shadow */
+}
+
+header .logo {
+  font-size: 1.5rem;
+  font-weight: bold;
+  color: #fff;
+  text-transform: uppercase;
+}
+
+header .nav-links {
+  display: flex;
+  gap: 20px;
+}
+
+header .nav-links a {
+  text-decoration: none;
+  color: #fff;
+  font-size: 1rem;
+  transition: color 0.3s ease;
+}
+
+header .nav-links a:hover {
+  color: #00f7ff; /* Highlight color on hover */
+}

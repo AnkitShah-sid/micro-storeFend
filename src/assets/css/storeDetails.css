@@ -1,0 +1,101 @@
+/* StoreDetails.css */
+
+/* General Container Styles */
+.store-details-container {
+    margin: 20px;
+    padding: 20px;
+  }
+  
+  /* User Information Card */
+  .user-info-card {
+    background-color: #f9f9f9;
+    border: 1px solid #e0e0e0;
+    border-radius: 8px;
+    padding: 20px;
+    margin-bottom: 20px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  }
+  
+  .user-info-card h4 {
+    margin-bottom: 15px;
+    color: #4CAF50;
+  }
+  
+  .user-info-card p {
+    margin: 5px 0;
+    color: #555;
+  }
+  
+  /* Vendor List */
+  .vendor-card {
+    background-color: #ffffff;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    margin-bottom: 15px;
+    padding: 15px;
+    box-shadow: 0 1px 3px rgba(0, 0, 0, 0.1);
+  }
+  
+  .vendor-card h5 {
+    color: #3f51b5;
+    margin-bottom: 10px;
+  }
+  
+  .vendor-card p {
+    font-size: 14px;
+    color: #666;
+  }
+  
+  /* Item List */
+  .item-list {
+    margin-top: 10px;
+  }
+  
+  .item-list .list-group-item {
+    font-size: 14px;
+    padding: 8px;
+    border-bottom: 1px solid #eaeaea;
+  }
+  
+  /* Item Details */
+  .item-details {
+    margin-top: 10px;
+    padding: 10px;
+    background-color: #f1f1f1;
+    border-radius: 5px;
+    font-size: 13px;
+  }
+  
+  .item-details h6 {
+    margin-bottom: 5px;
+    color: #444;
+  }
+  
+  /* Back Button */
+  .store-details-back-btn {
+    margin-top: 20px;
+    padding: 8px 16px;
+    font-size: 14px;
+  }
+  
+  /* Responsive Styles */
+  @media (max-width: 768px) {
+    .store-details-container {
+      padding: 10px;
+    }
+  
+    .user-info-card, .vendor-card {
+      padding: 10px;
+    }
+  
+    .item-list .list-group-item {
+      font-size: 12px;
+      padding: 6px;
+    }
+  
+    .store-details-back-btn {
+      font-size: 12px;
+      padding: 6px 12px;
+    }
+  }
+  

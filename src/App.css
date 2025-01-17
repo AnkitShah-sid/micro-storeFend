@@ -1,0 +1,35 @@
+/* General Reset */
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+/* Global Background */
+/* App.css */
+
+body {
+  background-color: #4d4a4a !important; /* Red background */
+  color: #000;
+  font-family: sans-serif;
+  margin: 0;
+  padding: 0;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+}
+
+
+/* Ensure Forms or Content Have Distinct Background */
+.content-box {
+  background-color: #110909; /* Dark background for content areas */
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+  width: 100%; /* Make content box responsive */
+  max-width: 500px; /* Limit width for readability */
+  color: #fff; /* Ensure text inside content box is visible */
+}

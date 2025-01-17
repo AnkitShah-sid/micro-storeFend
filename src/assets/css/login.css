@@ -1,0 +1,163 @@
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+  -webkit-tap-highlight-color: transparent;
+}
+
+body {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+  /* background-image: url('../kalsangMaing'); Adjust the path */
+  background-color: rgb(232, 223, 223); /* Set the background color to gray */
+  background-size: cover;
+  background-size: cover;
+  background-repeat: no-repeat;
+  font-family: sans-serif;
+  padding-top: 60px; 
+}
+
+.login-box {
+  position: relative;
+  width: 400px;
+  height: 400px; /* Set the height same as width */
+  border: 1px solid #1b1919;
+  border-radius: 20px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: rgba(0, 0, 0, 0.6); /* Semi-transparent black */
+  backdrop-filter: blur(10px);
+  animation: fadeIn 0.8s ease;
+}
+.login-heading {
+    color: #fffdfd; /* Your desired color for the Login text */
+    font-size: 2rem;
+    text-align: center;
+  }
+
+h2 {
+  color: #fff;
+  font-size: 2rem;
+  text-align: center;
+  color: #db7a77; /* Same color as button and checkbox */
+}
+
+.input-box {
+  position: relative;
+  width: 310px;
+  margin: 20px 0;
+  border-bottom: 2px solid #f6f2f2;
+}
+
+.input-box label {
+  position: absolute;
+  top: 50%;
+  left: 5px;
+  transform: translateY(-50%);
+  color: #fbf9f9;
+  font-size: 16px;
+  transition: all 0.5s ease;
+}
+
+.input-box input:focus~label,
+.input-box input:valid~label {
+  top: -5px;
+  font-size: 14px;
+  color: #77db90; /* Highlight color */
+}
+
+.input-box input {
+  width: 100%;
+  height: 50px;
+  background: transparent;
+  border: none;
+  outline: none;
+  font-size: 1em;
+  color: #fff;
+  padding: 0 35px 0 5px;
+}
+
+.input-box .icon {
+  position: absolute;
+  right: 8px;
+  font-size: 20px;
+  color: white;
+  line-height: 57px;
+}
+
+.same-color, .remember-me {
+  color: #eef1ee;; /* Same color for the button and "Remember Me" label */
+}
+
+button.same-color {
+  background-color: #eef1ee;
+  color: #0e0e0e;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+}
+
+button.same-color:hover {
+  background-color: #7dcd7d;
+}
+
+button {
+  width: 100%;
+  height: 40px;
+  color: #000;
+  background-color: #fff;
+  border-radius: 20px;
+  outline: none;
+  cursor: pointer;
+  font-size: 16px;
+  font-weight: bold;
+  border: 1px solid #fff;
+  transition: all 0.3s ease;
+}
+
+button:hover {
+  background-color: transparent;
+  color: #fff;
+}
+
+.link {
+  margin-top: 20px;
+  color: #fff;
+  text-align: center;
+}
+
+.link p a {
+  text-decoration: none;
+  color: #fff;
+  font-weight: 600;
+}
+
+.link p a:hover {
+  text-decoration: underline;
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: scale(0.9);
+  }
+  to {
+    opacity: 1;
+    transform: scale(1);
+  }
+}
+
+/* Mobile Adjustments */
+@media (max-width: 576px) {
+  .login-box {
+    width: 300px;
+    height: 400px; /* Keep height same as width */
+  }
+
+  .input-box {
+    width: 275px;
+  }
+}

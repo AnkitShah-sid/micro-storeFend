@@ -1,0 +1,127 @@
+/* Prevent entire page scrolling */
+html, body {
+  height: 100%;
+  margin: 0;
+  padding: 0;
+  overflow: hidden; /* Ensures only list & details scroll */
+}
+
+/* Wrapper: Takes full viewport height */
+#root, .wrapper {
+  height: 100vh; /* Full viewport height */
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Container: Fills Remaining Space */
+.container {
+  display: flex;
+  flex: 1; /* Takes full available space */
+  overflow: hidden; /* Prevents entire page scrolling */
+  margin-top: 120px;
+}
+
+/* Sidebar List */
+.list {
+  width: 25%;
+  border-right: 1px solid #181212;
+  padding: 10px;
+  background-color: #4d4a4a !important;
+  color: white;
+  overflow-y: auto; /* Enable scrolling */
+  max-height: 100%; /* Ensures full height */
+}
+
+/* Details Section */
+.details {
+  width: 75%;
+  padding: 20px;
+  background-color: #4d4a4a !important;
+  overflow-y: auto; /* Enable scrolling */
+  max-height: 100%; /* Ensures full height */
+}
+
+/* List Item Styles */
+.list-item {
+  display: flex;
+  padding: 10px;
+  cursor: pointer;
+  color: #ddd;
+  gap: 20px;
+}
+
+.list-item:hover {
+  background-color: #444;
+}
+
+.selected {
+  background-color: #333;
+}
+
+/* Back Button for Mobile */
+.back-button {
+  display: none;
+  background: #181212;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.back-button:hover {
+  background: #333;
+}
+
+/* Hide details by default on mobile */
+@media (max-width: 768px) {
+  .container {
+    flex-direction: column;
+  }
+
+  .list {
+    width: 100%;
+    max-height: 50vh;
+    border-right: none;
+    border-bottom: 1px solid #181212;
+  }
+
+  .details {
+    width: 100%;
+    max-height: 50vh;
+    display: none; /* Hide by default */
+  }
+
+  /* Show details and hide list when an item is selected */
+  .details.show {
+    display: block;
+  }
+
+  .list.hide {
+    display: none;
+  }
+}
+
+/* Back Button for Mobile */
+.back-button {
+  display: none;
+  background: #181212;
+  color: white;
+  border: none;
+  padding: 10px;
+  font-size: 16px;
+  cursor: pointer;
+  margin-bottom: 10px;
+}
+
+.back-button:hover {
+  background: #333;
+}
+
+@media (max-width: 768px) {
+  .back-button {
+    display: block;
+  }
+}

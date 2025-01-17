@@ -1,0 +1,101 @@
+.page-content {
+    display: flex;
+    flex-wrap: wrap; /* Allows wrapping to the next line */
+    gap: 1rem; /* Space between cards */
+    justify-content: center; /* Centers cards horizontally */
+    padding: 1rem;
+  }
+  
+  .d_card {
+    position: relative;
+    display: flex;
+    align-items: flex-end;
+    justify-content: center;
+    overflow: hidden;
+    padding: 1rem;
+    width: 250px; /* Default card width */
+    height: 250px; /* Default card height */
+    text-align: center;
+    color: white;
+    background-color: rgb(232, 216, 216);
+    background-size: cover;
+    background-position: center;
+    border-radius: 15px;
+    margin: 1rem;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+    box-shadow: 0 2px 5px rgba(0, 0, 0, 0.2);
+  }
+  
+  .d_card:hover {
+    transform: scale(1.05);
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+  }
+  
+  .content {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    right: 0;
+    padding: 1rem;
+    background: rgba(0, 0, 0, 0.6);
+    color: white;
+    text-align: center;
+    overflow: hidden;
+    transition: max-height 0.3s ease-in-out;
+    max-height: 3rem; /* Initially show only the location */
+  }
+  
+  .d_card:hover .content {
+    max-height: 100%; /* Expand to show all data on hover */
+  }
+  
+  .heading {
+    font-size: 1.2rem;
+    font-weight: bold;
+    margin-bottom: 0.5rem;
+  }
+  
+  .location {
+    display: block;
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  
+  .data-content,
+  .contact {
+    display: none;
+  }
+  
+  .d_card:hover .data-content,
+  .d_card:hover .contact {
+    display: block;
+    font-size: 0.9rem;
+    margin-top: 0.5rem;
+  }
+  
+  /* Media Query for Tablets (768px - 1024px) */
+  @media (min-width: 768px) and (max-width: 1024px) {
+    .d_card {
+      width: 300px;
+      height: 300px;
+    }
+  
+    .page-content {
+      gap: 1.5rem;
+    }
+  }
+  
+  /* Media Query for Phones (up to 767px) */
+  @media (max-width: 767px) {
+    .d_card {
+      width: 90%;
+      height: auto;
+      margin: 0.5rem auto;
+    }
+  
+    .page-content {
+      flex-direction: column;
+      align-items: center;
+    }
+  }
+  
