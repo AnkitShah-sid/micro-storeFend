@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react';
-import "../assets/css/storeDashboard.css"; // Your existing CSS for the dashboard
-import Header from './Headere'; // Import the Header component
+import "../assets/css/storeDashboard.css";
+import Header from './Header'; // Ensure correct component name
 import axios from 'axios';
 
 const StoreDashboard = () => {
@@ -8,7 +8,7 @@ const StoreDashboard = () => {
   const [selectedItem, setSelectedItem] = useState(null);
   const [loading, setLoading] = useState(true);
   const [error, setError] = useState(null);
-  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768); // Track screen size
+  const [isMobile, setIsMobile] = useState(window.innerWidth <= 768);
 
   useEffect(() => {
     const fetchData = async () => {
@@ -25,7 +25,6 @@ const StoreDashboard = () => {
     fetchData();
   }, []);
 
-  // Handle screen resize to update `isMobile`
   useEffect(() => {
     const handleResize = () => {
       setIsMobile(window.innerWidth <= 768);
@@ -51,7 +50,6 @@ const StoreDashboard = () => {
       <Header />
       <div className='wrapper'>
         <div className="container">
-          {/* Show list only if no item is selected OR on desktop */}
           {(!isMobile || !selectedItem) && (
             <div className="list">
               {data.map((item) => (
@@ -60,16 +58,13 @@ const StoreDashboard = () => {
                   className={`list-item ${selectedItem?.id === item.id ? 'selected' : ''}`}
                   onClick={() => handleItemClick(item)}
                 >
-                  <div>{item.name }</div>
-                  <div>{item.itemName}</div> {/* Showing itemName in the list */}
-                  <div>{item.totalQuantity}</div> {/* Showing totalQuantity in the list */}
-                  <div>{item.unitType}</div> {/* Showing unitType in the list */}
+                  <div>{item.itemName}</div>
+                  <div>{item.totalQuantity} {item.unitType}</div>
                 </div>
               ))}
             </div>
           )}
 
-          {/* Show details only if an item is selected OR on desktop */}
           {(selectedItem || !isMobile) && (
             <div className="details">
               {isMobile && selectedItem && (
@@ -77,9 +72,36 @@ const StoreDashboard = () => {
               )}
               {selectedItem ? (
                 <>
-                  <h2>{selectedItem.itemName}</h2>
-                  <p>{selectedItem.totalQuantity}</p>
-                  <p>{selectedItem.unitType}</p>
+                  <h1>{selectedItem.itemName}</h1>
+                  <p5>Total Quantity: {selectedItem.totalQuantity} {selectedItem.unitType}</p5>
+
+                  {/* Display Item Details */}
+                  <h3>Item Details:</h3>
+                  <table className="item-details-table">
+                    <thead>
+                      <tr>
+                        <th>Item Quantity</th>
+                        <th>Unit Type</th>
+                        <th>Inbound Date</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                      {selectedItem.itemDetails && selectedItem.itemDetails.length > 0 ? (
+                        selectedItem.itemDetails.map((detail, index) => (
+                          <tr key={index}>
+                            <td>{detail.itemQuantity || "N/A"}</td>
+                           {/* <td>{detail.outbountDate ? new Date(detail.outbountDate).toLocaleString() : "N/A"}</td> */}
+                            <td>{detail.unitType || "N/A"}</td>
+                            <td>{new Date(detail.inboundDate).toLocaleString()}</td>
+                          </tr>
+                        ))
+                      ) : (
+                        <tr>
+                          <td colSpan="4">No item details available</td>
+                        </tr>
+                      )}
+                    </tbody>
+                  </table>
                 </>
               ) : (
                 <p>Select an item to see the details</p>

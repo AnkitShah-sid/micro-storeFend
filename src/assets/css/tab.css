@@ -1,49 +1,134 @@
-/* General Layout */
-body {
-  font-family: 'Poppins', sans-serif;
-  margin: 0;
-  padding: 0;
-  background-color: #F1F5FF;
-  box-sizing: border-box;
-
-}
-
-/* Section Tabs (Full-Screen Layout) */
+/* Section Tabs */
 .section-tabs {
   display: flex;
-  justify-content: space-around;
-  background-color: #4d4a4a !important; /* Light background color */
+  justify-content: space-between;
+  align-items: center;
+  background-color: #2c3e50; /* Dark Blue */
   border-bottom: 1px solid #ddd;
-  padding: 0;
+  padding: 10px 20px;
   width: 100%;
   position: fixed;
-  top: 60px; /* Position below the header */
+  top: 60px;
   left: 0;
   right: 0;
   z-index: 10;
-  min-width: 320px;
-  margin-top: 5px;
   height: 60px;
 }
 
+/* Tabs Container (25% width for large screens) */
+.tabs-container {
+  display: flex;
+  justify-content: center;
+  flex: 1;
+  gap: 15px;
+}x  
+
 /* Section Tab */
 .section-tab {
-  padding: 1rem;
+  padding: 10px 20px;
   cursor: pointer;
   text-align: center;
   font-weight: bold;
   transition: background-color 0.3s ease, color 0.3s ease;
+  border-radius: 10px;
+}
+.section-tab .tab-link {
+  text-decoration: none;
+  color: white;
+  font-size: 16px;
+  font-weight: bold;
 }
 
 .section-tab:hover {
-  background-color: #6d6a6a;
-  color: white;
-  border-radius: 20px;
+  background-color: #34495e; /* Slightly lighter blue */
+  border-radius: 10px;
 }
 
+/* Active tab */
 .section-tab.active {
-  background-color: #243527;
-  color: #fff;
-  border-radius: 40px;
-  padding: 5px 140px;
+  background-color: #1c6538; /* Red */
+  border-radius: 5px;
+  border-spacing: 10px;
+}
+
+/* Right Controls (Search & Dropdown - 75% width) */
+.right-controls {
+  display: flex;
+  align-items: center;
+  gap: 15px;
+}
+
+/* Search Button */
+.search-button {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+.search-button:hover {
+  background-color: #34495e; /* Darker Red */
+}
+
+/* Dropdown */
+.dropdown {
+  padding: 5px;
+  border-radius: 5px;
+  border: 1px solid #ddd;
+  background: white;
+  cursor: pointer;
+}
+
+/* Responsive Design */
+@media screen and (max-width: 768px) {
+  .section-tabs {
+    flex-direction: column;
+    height: auto;
+    padding: 10px;
+  }
+
+  .tabs-container {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .section-tab {
+    padding: 8px;
+    font-size: 14px;
+  }
+
+  .right-controls {
+    width: 100%;
+    justify-content: center;
+    margin-top: 10px;
+  }
+
+  .search-button, .dropdown {
+    font-size: 14px;
+    padding: 6px;
+  }
+}
+
+@media screen and (max-width: 480px) {
+  .tabs-container {
+    flex-direction: column;
+    align-items: center;
+  }
+
+  .section-tab {
+    width: 100%;
+    text-align: center;
+    padding: 10px;
+  }
+
+  .right-controls {
+    flex-direction: column;
+    align-items: center;
+    gap: 10px;
+  }
+
+  .search-button, .dropdown {
+    width: 80%;
+  }
 }

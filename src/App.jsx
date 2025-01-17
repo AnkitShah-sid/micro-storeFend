@@ -1,6 +1,6 @@
 import React from 'react';
 import { BrowserRouter, Routes, Route, useLocation } from 'react-router-dom';
-import Headere from './components/Headere';
+import Header from './components/Header';
 import Tab from './components/Tab'; // Import Navbar
 import Login from './components/Login';
 import "./App.css";
@@ -27,7 +27,7 @@ import Butchery from './components/Butchery';
 
   return (
     <>
-     <Headere />   {/* //header is allways show */}
+     <Header />   {/* //header is allways show */}
       {showTab && <Tab />} {/* Navbar shows only on specific pages */}
       {children} {/* Renders the page content */}
     </>
